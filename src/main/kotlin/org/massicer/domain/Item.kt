@@ -42,8 +42,18 @@ abstract class Item(
         val ingredients: Set<Ingredient>,
         val instructions: List<Instruction>
     ) : Item(name, tagline) {
+
+        init {
+            check(instructions.distinct().size == instructions.size) { "Instructions cannot contain duplicates" }
+        }
+
         data class Ingredient(val name: String, val amount: Amount) {
             data class Amount(val value: Double, val measureUnit: MeasureUnit) {
+
+                init {
+                    check(value > 0.0) { "Value mus be bigger than 0" }
+                }
+
                 enum class MeasureUnit { CL }
             }
         }
