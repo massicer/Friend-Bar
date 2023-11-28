@@ -74,4 +74,4 @@ jobs:
       - name: Push docker image
 #        if: ${{ github.ref == 'refs/heads/main' }}
         run:
-          docker push ${{env.LOCAL_IMAGE_NAME}}:${{github.sha}}
+          docker push ${{env.DOCKER_IMAGE_NAME}}:${{github.sha}}
