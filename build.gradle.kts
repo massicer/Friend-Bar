@@ -23,6 +23,7 @@ dependencies {
     implementation("io.quarkus:quarkus-resteasy-reactive")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
+    testImplementation("io.kotest:kotest-assertions-core:5.8.0")
 }
 
 group = "org.massicer"
