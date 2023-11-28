@@ -1,6 +1,7 @@
 package org.massicer.domain
 
 import io.kotest.assertions.throwables.shouldThrowWithMessage
+import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import org.massicer.domain.Item.Beer
@@ -13,6 +14,23 @@ class ItemTest {
 
     @Nested
     inner class BeerTest {
+
+        @Test
+        fun `beer is correctly created`() {
+            Beer(
+                name = "my-name",
+                tagline = "Hello",
+                abv = 0.12f,
+                ibu = 2u,
+                foodPairing = "Pizza"
+            ).let {
+                it.name shouldBe "my-name"
+                it.tagline shouldBe "Hello"
+                it.abv shouldBe 0.12f
+                it.ibu shouldBe 2u
+                it.foodPairing shouldBe "Pizza"
+            }
+        }
 
         @Test
         fun `name cannot be empty`() {
@@ -134,6 +152,21 @@ class ItemTest {
 
     @Nested
     inner class CocktailTest {
+
+        @Test
+        fun `cocktail is correctly created`() {
+            Cocktail(
+                name = "cocktail name",
+                tagline = "Hello",
+                ingredients = setOf(Ingredient("tabasco", Amount(1.2, CL))),
+                instructions = listOf("Put it in", "take it out")
+            ).let {
+                it.name shouldBe "cocktail name"
+                it.tagline shouldBe "Hello"
+                it.ingredients shouldBe setOf(Ingredient("tabasco", Amount(1.2, CL)))
+                it.instructions shouldBe listOf("Put it in", "take it out")
+            }
+        }
 
         @Test
         fun `name cannot be empty`() {
