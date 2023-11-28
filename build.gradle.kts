@@ -2,6 +2,7 @@ plugins {
     kotlin("jvm") version "1.9.10"
     kotlin("plugin.allopen") version "1.9.10"
     id("io.quarkus")
+    id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
 }
 
 repositories {
@@ -14,7 +15,7 @@ val quarkusPlatformArtifactId: String by project
 val quarkusPlatformVersion: String by project
 
 dependencies {
-    implementation(enforcedPlatform("${quarkusPlatformGroupId}:${quarkusPlatformArtifactId}:${quarkusPlatformVersion}"))
+    implementation(enforcedPlatform("$quarkusPlatformGroupId:$quarkusPlatformArtifactId:$quarkusPlatformVersion"))
     implementation("io.quarkus:quarkus-kotlin")
     implementation("io.quarkus:quarkus-resteasy-reactive-jackson")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -30,8 +31,10 @@ version = "1.0.0-SNAPSHOT"
 java {
     sourceCompatibility = JavaVersion.VERSION_17
     targetCompatibility = JavaVersion.VERSION_17
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
 }
-
 tasks.withType<Test> {
     systemProperty("java.util.logging.manager", "org.jboss.logmanager.LogManager")
 }
