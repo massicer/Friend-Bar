@@ -16,7 +16,7 @@ class ItemTest {
                     name = "",
                     tagline = "Hello",
                     abv = 0.12f,
-                    ibu = 2,
+                    ibu = 2u,
                     foodPairing = "Pizza"
                 )
             }
@@ -29,7 +29,7 @@ class ItemTest {
                     name = " ",
                     tagline = "Hello",
                     abv = 0.12f,
-                    ibu = 2,
+                    ibu = 2u,
                     foodPairing = "Pizza"
                 )
             }
@@ -42,7 +42,7 @@ class ItemTest {
                     name = "mybeer",
                     tagline = "Hello",
                     abv = 0.12f,
-                    ibu = 2,
+                    ibu = 2u,
                     foodPairing = ""
                 )
             }
@@ -55,7 +55,7 @@ class ItemTest {
                     name = "mybeer",
                     tagline = "Hello",
                     abv = 0.12f,
-                    ibu = 2,
+                    ibu = 2u,
                     foodPairing = " "
                 )
             }
@@ -68,7 +68,7 @@ class ItemTest {
                     name = "my-name",
                     tagline = "",
                     abv = 0.12f,
-                    ibu = 2,
+                    ibu = 2u,
                     foodPairing = "Pizza"
                 )
             }
@@ -81,7 +81,7 @@ class ItemTest {
                     name = "my-name",
                     tagline = " ",
                     abv = 0.12f,
-                    ibu = 2,
+                    ibu = 2u,
                     foodPairing = "Pizza"
                 )
             }
@@ -94,7 +94,7 @@ class ItemTest {
                     name = "my-name",
                     tagline = "ciao",
                     abv = -0.1f,
-                    ibu = 2,
+                    ibu = 2u,
                     foodPairing = "Pizza"
                 )
             }
@@ -107,7 +107,20 @@ class ItemTest {
                     name = "my-name",
                     tagline = "ciao",
                     abv = 100.1f,
-                    ibu = 2,
+                    ibu = 2u,
+                    foodPairing = "Pizza"
+                )
+            }
+        }
+
+        @Test
+        fun `abv cannot bigger than 120`() {
+            shouldThrowWithMessage<IllegalStateException>("IBU must be bigger or equal to 120") {
+                Item.Beer(
+                    name = "my-name",
+                    tagline = "ciao",
+                    abv = 100f,
+                    ibu = 121u,
                     foodPairing = "Pizza"
                 )
             }

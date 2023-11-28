@@ -3,9 +3,10 @@ package org.massicer.domain
 typealias Name = String
 typealias TagLine = String
 typealias EthanolMilliliters = Float // for 100 ml of solution
-typealias InternationaBitternesUnit = Int
+typealias InternationaBitternesUnit = UInt
 typealias Food = String
 typealias Instruction = String
+
 abstract class Item(
     val name: Name,
     val tagline: TagLine
@@ -31,6 +32,7 @@ abstract class Item(
             check(foodPairing.isNotEmpty()) { "FoodPairing cannot be blank" }
             check(abv >= 0.0f) { "ABV must be bigger or equal to 0" }
             check(abv <= 100.0f) { "ABV must be smaller or equal to 100.0" }
+            check(ibu <= 120u) { "IBU must be bigger or equal to 120" }
         }
     }
 
