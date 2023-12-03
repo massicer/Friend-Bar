@@ -7,7 +7,7 @@ import org.massicer.domain.repositories.BeerRepository
 @ApplicationScoped
 class InMemoryBeerRepository : BeerRepository {
 
-    private val beers = listOf(
+    private val beers = setOf(
         Beer("Lager", "Crisp and Clean", 4.5f, 20u, "Grilled Chicken"),
         Beer("IPA", "Bold and Hoppy", 6.0f, 60u, "Spicy Tacos"),
         Beer("Stout", "Rich and Roasty", 7.2f, 40u, "Chocolate Brownie"),
@@ -30,5 +30,5 @@ class InMemoryBeerRepository : BeerRepository {
         Beer("Sour Ale", "Tart and Funky", 4.5f, 10u, "Cheese Plate")
     )
 
-    override fun getRandomBeer(): Beer = beers.random()
+    override fun getRandom(): Beer = beers.random()
 }

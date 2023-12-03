@@ -9,8 +9,8 @@ class InMemoryBeerRepositoryTest {
 
     @Test
     fun `returns a random beer correctly`() {
-        val firstBeer = service.getRandomBeer()
-        val secondBeer = service.getRandomBeer()
+        val firstBeer = service.getRandom()
+        val secondBeer = service.getRandom()
 
         firstBeer shouldNotBe secondBeer
     }

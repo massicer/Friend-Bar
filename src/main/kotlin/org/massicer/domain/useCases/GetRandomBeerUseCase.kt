@@ -7,5 +7,5 @@ import org.massicer.domain.repositories.BeerRepository
 @ApplicationScoped
 class GetRandomBeerUseCase(private val itemsService: BeerRepository) {
 
-    fun getRandomBeer(): Beer = itemsService.getRandomBeer()
+    fun get(): Beer = itemsService.getRandom()
 }

@@ -14,8 +14,8 @@ class GetRandomBeerUseCaseTest {
 
     @Test
     fun `returns the beer got from the item service`() {
-        every { service.getRandomBeer() } returns aBeer
+        every { service.getRandom() } returns aBeer
 
-        useCase.getRandomBeer() shouldBe aBeer
+        useCase.get() shouldBe aBeer
     }
 }

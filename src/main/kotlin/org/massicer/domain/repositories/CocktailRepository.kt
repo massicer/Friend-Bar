@@ -2,7 +2,7 @@ package org.massicer.domain.repositories
 
 import org.massicer.domain.Item
 
-interface BeerRepository {
+interface CocktailRepository {
 
-    fun getRandom(): Item.Beer
+    fun getRandom(): Item.Cocktail
 }

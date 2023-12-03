@@ -17,7 +17,7 @@ class GetRandomBeerController(private val getRandomBeerUseCase: GetRandomBeerUse
 
     @GET
     @Produces(APPLICATION_JSON)
-    fun getRandom(): BeerModel = getRandomBeerUseCase.getRandomBeer().toModel()
+    fun getRandom(): BeerModel = getRandomBeerUseCase.get().toModel()
 
     data class BeerModel(
         val name: String,

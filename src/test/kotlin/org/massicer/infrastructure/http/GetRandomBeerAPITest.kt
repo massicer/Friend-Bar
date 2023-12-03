@@ -19,7 +19,7 @@ class GetRandomBeerAPITest {
 
     @Test
     fun `a random beer is returned`() {
-        every { repository.getRandomBeer() } returns aBeer
+        every { repository.getRandom() } returns aBeer
 
         given()
             .`when`().get("/beer")
