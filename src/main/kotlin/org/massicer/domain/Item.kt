@@ -34,6 +34,24 @@ abstract class Item(
             check(abv <= 100.0f) { "ABV must be smaller or equal to 100.0" }
             check(ibu <= 120u) { "IBU must be bigger or equal to 120" }
         }
+
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (other !is Beer) return false
+            if (!super.equals(other)) return false
+
+            if (abv != other.abv) return false
+            if (ibu != other.ibu) return false
+            return foodPairing == other.foodPairing
+        }
+
+        override fun hashCode(): Int {
+            var result = super.hashCode()
+            result = 31 * result + abv.hashCode()
+            result = 31 * result + ibu.hashCode()
+            result = 31 * result + foodPairing.hashCode()
+            return result
+        }
     }
 
     class Cocktail(
@@ -57,5 +75,35 @@ abstract class Item(
                 enum class MeasureUnit { CL }
             }
         }
+
+        override fun equals(other: Any?): Boolean {
+            if (this === other) return true
+            if (other !is Cocktail) return false
+            if (!super.equals(other)) return false
+
+            if (ingredients != other.ingredients) return false
+            return instructions == other.instructions
+        }
+
+        override fun hashCode(): Int {
+            var result = super.hashCode()
+            result = 31 * result + ingredients.hashCode()
+            result = 31 * result + instructions.hashCode()
+            return result
+        }
+    }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Item) return false
+
+        if (name != other.name) return false
+        return tagline == other.tagline
+    }
+
+    override fun hashCode(): Int {
+        var result = name.hashCode()
+        result = 31 * result + tagline.hashCode()
+        return result
     }
 }
