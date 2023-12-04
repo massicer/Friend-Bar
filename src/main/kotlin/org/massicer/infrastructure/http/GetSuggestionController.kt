@@ -2,6 +2,8 @@ package org.massicer.infrastructure.http
 
 import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path
+import jakarta.ws.rs.Produces
+import jakarta.ws.rs.core.MediaType
 import jakarta.ws.rs.core.Response.status
 import org.massicer.domain.Item.Beer
 import org.massicer.domain.Item.Cocktail
@@ -13,6 +15,7 @@ import org.massicer.infrastructure.http.GetSuggestionController.ErrorResponse.Co
 class GetSuggestionController(private val getSuggestionUseCase: GetSuggestionUseCase) {
 
     @GET
+    @Produces(MediaType.APPLICATION_JSON)
     fun getRandom(): Any {
         val suggestion = getSuggestionUseCase.get()
         return suggestion.first?.let {
