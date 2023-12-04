@@ -4,13 +4,11 @@ import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path
 import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
-import jakarta.ws.rs.core.Response
 import jakarta.ws.rs.core.Response.Status.NOT_FOUND
 import jakarta.ws.rs.core.Response.status
 import org.eclipse.microprofile.openapi.annotations.media.Content
 import org.eclipse.microprofile.openapi.annotations.media.Schema
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse
-import org.eclipse.microprofile.openapi.annotations.responses.APIResponseSchema
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses
 import org.massicer.domain.Item.Beer
 import org.massicer.domain.Item.Cocktail
@@ -27,7 +25,8 @@ class GetSuggestionController(private val getSuggestionUseCase: GetSuggestionUse
     @Produces(MediaType.APPLICATION_JSON)
     @APIResponses(
         APIResponse(
-            responseCode = "404", description = "Cocktail not found for user",
+            responseCode = "404",
+            description = "Cocktail not found for user",
             content = [
                 Content(
                     mediaType = "application/json",
