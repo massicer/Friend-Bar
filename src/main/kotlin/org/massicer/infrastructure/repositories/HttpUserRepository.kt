@@ -23,15 +23,12 @@ class HttpUserRepository(@RestClient private val httpClient: UserClient) : UserR
 
         val offsetString = userResponse.location.timezone.offset
 
-        // Extract the sign, hours, and minutes
         val sign = offsetString[0]
         val hours = offsetString.substring(1, offsetString.indexOf(':')).toInt()
         val minutes = offsetString.substring(offsetString.indexOf(':') + 1).toInt()
 
-        // Determine the sign for ZoneOffset
         val offsetSign = if (sign == '-') -1 else 1
 
-        // Create ZoneOffset manually
         val zoneOffset = ZoneOffset.ofHoursMinutes(offsetSign * hours, minutes * offsetSign)
 
         return User(
