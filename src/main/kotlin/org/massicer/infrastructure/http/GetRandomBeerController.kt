@@ -4,6 +4,7 @@ import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path
 import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType.APPLICATION_JSON
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponseSchema
 import org.massicer.domain.Item.Beer
 import org.massicer.domain.useCases.GetRandomBeerUseCase
 import org.massicer.infrastructure.http.GetRandomBeerController.BeerModel
@@ -17,6 +18,11 @@ class GetRandomBeerController(private val getRandomBeerUseCase: GetRandomBeerUse
 
     @GET
     @Produces(APPLICATION_JSON)
+    @APIResponseSchema(
+        responseCode = "200",
+        value = BeerModel::class,
+        responseDescription = "A random Beer"
+    )
     fun getRandom(): BeerModel = getRandomBeerUseCase.get().toModel()
 
     data class BeerModel(

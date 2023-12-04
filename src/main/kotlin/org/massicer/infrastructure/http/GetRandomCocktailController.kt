@@ -4,6 +4,7 @@ import jakarta.ws.rs.GET
 import jakarta.ws.rs.Path
 import jakarta.ws.rs.Produces
 import jakarta.ws.rs.core.MediaType
+import org.eclipse.microprofile.openapi.annotations.responses.APIResponseSchema
 import org.massicer.domain.Item
 import org.massicer.domain.useCases.GetRandomCocktailUseCase
 import org.massicer.infrastructure.http.GetRandomCocktailController.CocktailModel.Ingredient
@@ -17,6 +18,11 @@ class GetRandomCocktailController(private val getRandomCocktailUseCase: GetRando
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @APIResponseSchema(
+        responseCode = "200",
+        value = CocktailModel::class,
+        responseDescription = "A random Cocktail"
+    )
     fun getRandom(): CocktailModel = getRandomCocktailUseCase.get().toModel()
 
     data class CocktailModel(

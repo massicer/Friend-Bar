@@ -22,6 +22,7 @@ dependencies {
     implementation("io.quarkus:quarkus-arc")
     implementation("io.quarkus:quarkus-resteasy-reactive")
     implementation("io.quarkus:quarkus-rest-client-reactive-jackson")
+    implementation("io.quarkus:quarkus-smallrye-openapi")
     testImplementation("io.quarkus:quarkus-junit5")
     testImplementation("io.rest-assured:rest-assured")
     testImplementation(platform("io.kotest:kotest-bom:5.8.0"))
