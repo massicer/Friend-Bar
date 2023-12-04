@@ -33,7 +33,7 @@ class GetRandomCocktailController(private val getRandomCocktailUseCase: GetRando
     }
 }
 
-private fun Item.Cocktail.toModel(): GetRandomCocktailController.CocktailModel {
+fun Item.Cocktail.toModel(): GetRandomCocktailController.CocktailModel {
     return GetRandomCocktailController.CocktailModel(
         name = name,
         tagline = tagline,

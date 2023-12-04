@@ -7,7 +7,7 @@ typealias InternationaBitternesUnit = UInt
 typealias Food = String
 typealias Instruction = String
 
-abstract class Item(
+sealed class Item(
     val name: Name,
     val tagline: TagLine
 ) {

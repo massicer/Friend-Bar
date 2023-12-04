@@ -3,6 +3,7 @@ package org.massicer.domain.useCases
 import jakarta.enterprise.context.ApplicationScoped
 import org.massicer.domain.Item
 import org.massicer.domain.Item.Beer
+import org.massicer.domain.User
 import org.massicer.domain.UserRepository
 import org.massicer.domain.repositories.BeerRepository
 import org.massicer.domain.repositories.CocktailRepository
@@ -14,12 +15,10 @@ class GetSuggestionUseCase(
     private val userRepository: UserRepository
 ) {
 
-    fun get(): Item? {
+    fun get(): Pair<Item?, User> {
         val user = userRepository.getRandom()
-        return if (user.isDaytime()) {
-            beerRepository.getRandom()
-        } else {
-            cocktailRepository.getRandom()
-        }
+        val item =
+            if (user.isDaytime()) beerRepository.getRandom() else cocktailRepository.getCoktailFor(user.firstName)
+        return Pair(item, user)
     }
 }

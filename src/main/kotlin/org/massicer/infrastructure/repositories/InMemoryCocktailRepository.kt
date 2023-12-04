@@ -5,6 +5,7 @@ import org.massicer.domain.Item.Cocktail
 import org.massicer.domain.Item.Cocktail.Ingredient
 import org.massicer.domain.Item.Cocktail.Ingredient.Amount
 import org.massicer.domain.Item.Cocktail.Ingredient.Amount.MeasureUnit.CL
+import org.massicer.domain.UserName
 import org.massicer.domain.repositories.CocktailRepository
 
 @ApplicationScoped
@@ -69,4 +70,8 @@ class InMemoryCocktailRepository : CocktailRepository {
     )
 
     override fun getRandom(): Cocktail = cocktails.random()
+    override fun getCoktailFor(name: UserName): Cocktail? {
+        val letter = name.first().lowercase()
+        return cocktails.find { it.name.first().lowercase() == letter }
+    }
 }
