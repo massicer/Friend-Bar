@@ -10,9 +10,9 @@ import io.restassured.RestAssured.given
 import org.intellij.lang.annotations.Language
 import org.junit.jupiter.api.Test
 import org.massicer.domain.User
-import org.massicer.domain.repositories.UserRepository
 import org.massicer.domain.repositories.BeerRepository
 import org.massicer.domain.repositories.CocktailRepository
+import org.massicer.domain.repositories.UserRepository
 import org.massicer.util.TestDomainObjects.aBeer
 import org.massicer.util.TestDomainObjects.aCocktail
 import org.massicer.util.shouldMatchJson

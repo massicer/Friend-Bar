@@ -3,9 +3,9 @@ package org.massicer.domain.useCases
 import jakarta.enterprise.context.ApplicationScoped
 import org.massicer.domain.Item
 import org.massicer.domain.User
-import org.massicer.domain.repositories.UserRepository
 import org.massicer.domain.repositories.BeerRepository
 import org.massicer.domain.repositories.CocktailRepository
+import org.massicer.domain.repositories.UserRepository
 
 @ApplicationScoped
 class GetSuggestionUseCase(
