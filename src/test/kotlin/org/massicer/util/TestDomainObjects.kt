@@ -1,34 +1,38 @@
 package org.massicer.util
 
 import org.massicer.domain.Item
+import org.massicer.domain.Item.Cocktail
+import org.massicer.domain.Item.Cocktail.Ingredient
+import org.massicer.domain.Item.Cocktail.Ingredient.Amount
+import org.massicer.domain.Item.Cocktail.Ingredient.Amount.MeasureUnit.CL
 
 object TestDomainObjects {
 
-    val aBeer = Item.Beer("Lager", "Crisp and Clean", 4.5f, 20u, "Grilled Chicken")
+    val aBeer = Item.Beer("Lager", "Crisp and Clean", 4.5f, 20u, setOf("Grilled Chicken"))
 
-    val aCocktail = Item.Cocktail(
+    val aCocktail = Cocktail(
         "Margarita",
         "Classic and Refreshing",
         setOf(
-            Item.Cocktail.Ingredient(
+            Ingredient(
                 "Tequila",
-                Item.Cocktail.Ingredient.Amount(5.0, Item.Cocktail.Ingredient.Amount.MeasureUnit.CL)
+                Amount(5.0, CL)
             ),
-            Item.Cocktail.Ingredient(
+            Ingredient(
                 "Triple Sec",
-                Item.Cocktail.Ingredient.Amount(2.0, Item.Cocktail.Ingredient.Amount.MeasureUnit.CL)
+                Amount(2.0, CL)
             ),
-            Item.Cocktail.Ingredient(
+            Ingredient(
                 "Lime Juice",
-                Item.Cocktail.Ingredient.Amount(3.0, Item.Cocktail.Ingredient.Amount.MeasureUnit.CL)
+                Amount(3.0, CL)
             ),
-            Item.Cocktail.Ingredient(
+            Ingredient(
                 "Simple Syrup",
-                Item.Cocktail.Ingredient.Amount(1.0, Item.Cocktail.Ingredient.Amount.MeasureUnit.CL)
+                Amount(1.0, CL)
             ),
-            Item.Cocktail.Ingredient(
+            Ingredient(
                 "Salt",
-                Item.Cocktail.Ingredient.Amount(0.5, Item.Cocktail.Ingredient.Amount.MeasureUnit.CL)
+                Amount(0.5, CL)
             )
         ),
         listOf(

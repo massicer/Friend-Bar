@@ -22,13 +22,13 @@ class ItemTest {
                 tagline = "Hello",
                 abv = 0.12f,
                 ibu = 2u,
-                foodPairing = "Pizza"
+                foodPairing = setOf("Pizza")
             ).let {
                 it.name shouldBe "my-name"
                 it.tagline shouldBe "Hello"
                 it.abv shouldBe 0.12f
                 it.ibu shouldBe 2u
-                it.foodPairing shouldBe "Pizza"
+                it.foodPairing shouldBe setOf("Pizza")
             }
         }
 
@@ -40,7 +40,7 @@ class ItemTest {
                     tagline = "Hello",
                     abv = 0.12f,
                     ibu = 2u,
-                    foodPairing = "Pizza"
+                    foodPairing = setOf("Pizza")
                 )
             }
         }
@@ -53,33 +53,7 @@ class ItemTest {
                     tagline = "Hello",
                     abv = 0.12f,
                     ibu = 2u,
-                    foodPairing = "Pizza"
-                )
-            }
-        }
-
-        @Test
-        fun `food pairing cannot be empty`() {
-            shouldThrowWithMessage<IllegalStateException>("FoodPairing cannot be blank") {
-                Beer(
-                    name = "mybeer",
-                    tagline = "Hello",
-                    abv = 0.12f,
-                    ibu = 2u,
-                    foodPairing = ""
-                )
-            }
-        }
-
-        @Test
-        fun `food pairing cannot be blank`() {
-            shouldThrowWithMessage<IllegalStateException>("FoodPairing cannot be blank") {
-                Beer(
-                    name = "mybeer",
-                    tagline = "Hello",
-                    abv = 0.12f,
-                    ibu = 2u,
-                    foodPairing = " "
+                    foodPairing = setOf("Pizza")
                 )
             }
         }
@@ -92,7 +66,7 @@ class ItemTest {
                     tagline = "",
                     abv = 0.12f,
                     ibu = 2u,
-                    foodPairing = "Pizza"
+                    foodPairing = setOf("Pizza")
                 )
             }
         }
@@ -105,7 +79,7 @@ class ItemTest {
                     tagline = " ",
                     abv = 0.12f,
                     ibu = 2u,
-                    foodPairing = "Pizza"
+                    foodPairing = setOf("Pizza")
                 )
             }
         }
@@ -118,7 +92,7 @@ class ItemTest {
                     tagline = "ciao",
                     abv = -0.1f,
                     ibu = 2u,
-                    foodPairing = "Pizza"
+                    foodPairing = setOf("Pizza")
                 )
             }
         }
@@ -131,7 +105,7 @@ class ItemTest {
                     tagline = "ciao",
                     abv = 100.1f,
                     ibu = 2u,
-                    foodPairing = "Pizza"
+                    foodPairing = setOf("Pizza")
                 )
             }
         }
@@ -144,7 +118,7 @@ class ItemTest {
                     tagline = "ciao",
                     abv = 100f,
                     ibu = 121u,
-                    foodPairing = "Pizza"
+                    foodPairing = setOf("Pizza")
                 )
             }
         }

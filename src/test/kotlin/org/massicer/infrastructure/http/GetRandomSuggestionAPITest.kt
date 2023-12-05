@@ -106,7 +106,7 @@ class GetRandomSuggestionAPITest {
                     "tagline": "Crisp and Clean",
                     "abv": 4.5,
                     "ibu": 20,
-                    "foodPairing": "Grilled Chicken"
+                    "foodPairing": ["Grilled Chicken"]
                 }
         }
     """.toJsonNode()

@@ -30,8 +30,8 @@ class GetRandomBeerController(private val getRandomBeerUseCase: GetRandomBeerUse
         val tagline: String,
         val abv: EthanolMilliliters,
         val ibu: InternationaBitternesUnit,
-        val foodPairing: Food
+        val foodPairing: List<Food>
     )
 }
 
-fun Beer.toModel(): BeerModel = BeerModel(name, tagline, abv, ibu.toInt(), foodPairing)
+fun Beer.toModel(): BeerModel = BeerModel(name, tagline, abv, ibu.toInt(), foodPairing.toList())

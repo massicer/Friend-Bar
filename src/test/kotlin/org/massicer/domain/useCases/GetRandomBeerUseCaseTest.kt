@@ -10,7 +10,7 @@ import org.massicer.domain.repositories.BeerRepository
 class GetRandomBeerUseCaseTest {
     private val service = mockk<BeerRepository>()
     private val useCase = GetRandomBeerUseCase(service)
-    private val aBeer = Beer("Lager", "Crisp and Clean", 4.5f, 20u, "Grilled Chicken")
+    private val aBeer = Beer("Lager", "Crisp and Clean", 4.5f, 20u, setOf("Grilled Chicken"))
 
     @Test
     fun `returns the beer got from the item service`() {

@@ -25,11 +25,9 @@ sealed class Item(
         tagline: TagLine,
         val abv: EthanolMilliliters,
         val ibu: InternationaBitternesUnit,
-        val foodPairing: Food
+        val foodPairing: Set<Food>
     ) : Item(name, tagline) {
         init {
-            check(foodPairing.isNotBlank()) { "FoodPairing cannot be blank" }
-            check(foodPairing.isNotEmpty()) { "FoodPairing cannot be blank" }
             check(abv >= 0.0f) { "ABV must be bigger or equal to 0" }
             check(abv <= 100.0f) { "ABV must be smaller or equal to 100.0" }
             check(ibu <= 120u) { "IBU must be bigger or equal to 120" }
