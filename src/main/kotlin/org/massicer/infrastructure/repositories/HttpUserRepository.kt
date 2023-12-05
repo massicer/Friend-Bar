@@ -6,7 +6,7 @@ import jakarta.ws.rs.Path
 import org.eclipse.microprofile.rest.client.inject.RegisterRestClient
 import org.eclipse.microprofile.rest.client.inject.RestClient
 import org.massicer.domain.User
-import org.massicer.domain.UserRepository
+import org.massicer.domain.repositories.UserRepository
 import java.time.ZoneOffset
 
 @ApplicationScoped
