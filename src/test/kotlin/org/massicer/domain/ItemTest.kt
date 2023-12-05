@@ -110,7 +110,7 @@ class ItemTest {
 
         @Test
         fun `abv cannot bigger than 120`() {
-            shouldThrowWithMessage<IllegalStateException>("IBU must be bigger or equal to 120") {
+            shouldThrowWithMessage<IllegalStateException>("IBU must be smaller or equal to 120") {
                 Beer(
                     name = "my-name",
                     tagline = "ciao",

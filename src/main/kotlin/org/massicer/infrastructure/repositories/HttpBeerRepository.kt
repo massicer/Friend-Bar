@@ -36,7 +36,7 @@ private fun HttpBeerRepository.BeerClient.BeerResponse.toBeer(): Beer {
         name,
         tagline,
         abv.toFloat(),
-        ibu.toUInt(),
+        ibu.toUInt().coerceAtMost(120u),
         foodPairing.toSet()
     )
 }
