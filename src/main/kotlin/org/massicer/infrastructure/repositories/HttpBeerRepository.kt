@@ -39,7 +39,7 @@ private fun HttpBeerRepository.BeerClient.BeerResponse.toBeer(): Beer {
     return Beer(
         name,
         tagline,
-        abv / 100f,
+        abv.toFloat(),
         ibu.toUInt(),
         foodPairing.toSet()
     )
