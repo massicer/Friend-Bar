@@ -113,53 +113,38 @@ class GetRandomSuggestionAPITest {
 
         @Language("JSON")
         private val expectedCocktailResponse = """
-            {"cocktail": 
-                {
-                  "name": "Margarita",
-                  "tagline": "Classic and Refreshing",
-                  "ingredients": [
-                    {
-                      "name": "Tequila",
-                      "amount": {
-                        "value": 5.0,
-                        "measureUnit": "CL"
-                      }
-                    },
-                    {
-                      "name": "Triple Sec",
-                      "amount": {
-                        "value": 2.0,
-                        "measureUnit": "CL"
-                      }
-                    },
-                    {
-                      "name": "Lime Juice",
-                      "amount": {
-                        "value": 3.0,
-                        "measureUnit": "CL"
-                      }
-                    },
-                    {
-                      "name": "Simple Syrup",
-                      "amount": {
-                        "value": 1.0,
-                        "measureUnit": "CL"
-                      }
-                    },
-                    {
-                      "name": "Salt",
-                      "amount": {
-                        "value": 0.5,
-                        "measureUnit": "CL"
-                      }
-                    }
-                  ],
-                  "instructions": [
-                    "Rub the rim of the glass with the lime slice to make the salt stick to it.",
-                    "Take care to moisten only the outer rim and sprinkle the salt on it.",
-                    "The salt present is only for decoration."
-                  ]
-                }
+           {
+              "cocktail": {
+                "name": "Margarita",
+                "tagline": "Classic and Refreshing",
+                "ingredients": [
+                  {
+                    "name": "Tequila",
+                    "amount": "1 glass"
+                  },
+                  {
+                    "name": "Triple Sec",
+                    "amount": "1 glass"
+                  },
+                  {
+                    "name": "Lime Juice",
+                    "amount": "1 glass"
+                  },
+                  {
+                    "name": "Simple Syrup",
+                    "amount": "1 glass"
+                  },
+                  {
+                    "name": "Salt",
+                    "amount": "1 glass"
+                  }
+                ],
+                "instructions": [
+                  "Rub the rim of the glass with the lime slice to make the salt stick to it.",
+                  "Take care to moisten only the outer rim and sprinkle the salt on it.",
+                  "The salt present is only for decoration."
+                ]
+              }
             }
     """.toJsonNode()
     }

@@ -3,8 +3,6 @@ package org.massicer.infrastructure.repositories
 import jakarta.enterprise.context.ApplicationScoped
 import org.massicer.domain.Item.Cocktail
 import org.massicer.domain.Item.Cocktail.Ingredient
-import org.massicer.domain.Item.Cocktail.Ingredient.Amount
-import org.massicer.domain.Item.Cocktail.Ingredient.Amount.MeasureUnit.CL
 import org.massicer.domain.UserName
 import org.massicer.domain.repositories.CocktailRepository
 
@@ -17,12 +15,12 @@ class InMemoryCocktailRepository : CocktailRepository {
             "Mojito",
             "Refreshing and Minty",
             setOf(
-                Ingredient("White Rum", Amount(6.0, CL)),
-                Ingredient("Fresh Lime Juice", Amount(2.5, CL)),
-                Ingredient("Simple Syrup", Amount(2.0, CL)),
-                Ingredient("Fresh Mint Leaves", Amount(8.0, CL)),
-                Ingredient("Soda Water", Amount(5.0, CL)),
-                Ingredient("Ice Cubes", Amount(1.0, CL))
+                Ingredient("White Rum", "6.0 cl"),
+                Ingredient("Fresh Lime Juice", "2.5 cl"),
+                Ingredient("Simple Syrup", "2.0 cl"),
+                Ingredient("Fresh Mint Leaves", "8.0 cl"),
+                Ingredient("Soda Water", "5.0 cl"),
+                Ingredient("Ice Cubes", "1.0 cl")
             ),
             listOf(
                 "Muddle fresh mint leaves and simple syrup in a glass.",
@@ -36,11 +34,11 @@ class InMemoryCocktailRepository : CocktailRepository {
             "Old Fashioned",
             "Classic and Strong",
             setOf(
-                Ingredient("Bourbon", Amount(6.0, CL)),
-                Ingredient("Simple Syrup", Amount(1.0, CL)),
-                Ingredient("Angostura Bitters", Amount(2.0, CL)),
-                Ingredient("Orange Peel", Amount(1.0, CL)),
-                Ingredient("Ice Cubes", Amount(1.0, CL))
+                Ingredient("Bourbon", "6.0 cl"),
+                Ingredient("Simple Syrup", "1.0 cl"),
+                Ingredient("Angostura Bitters", "2.0 cl"),
+                Ingredient("Orange Peel", "1.0 cl"),
+                Ingredient("Ice Cubes", "1.0 cl")
             ),
             listOf(
                 "In a mixing glass, combine bourbon, simple syrup, and bitters.",
@@ -49,16 +47,15 @@ class InMemoryCocktailRepository : CocktailRepository {
                 "Express the oil from the orange peel over the drink and drop it in."
             )
         ),
-
         Cocktail(
             "Piña Colada",
             "Tropical and Creamy",
             setOf(
-                Ingredient("White Rum", Amount(6.0, CL)),
-                Ingredient("Coconut Cream", Amount(4.0, CL)),
-                Ingredient("Pineapple Juice", Amount(6.0, CL)),
-                Ingredient("Crushed Ice", Amount(1.0, CL)),
-                Ingredient("Pineapple Slice", Amount(1.0, CL))
+                Ingredient("White Rum", "6.0 cl"),
+                Ingredient("Coconut Cream", "4.0 cl"),
+                Ingredient("Pineapple Juice", "6.0 cl"),
+                Ingredient("Crushed Ice", "1.0 cl"),
+                Ingredient("Pineapple Slice", "1.0 cl")
             ),
             listOf(
                 "Blend white rum, coconut cream, pineapple juice, and crushed ice until smooth.",
@@ -66,7 +63,6 @@ class InMemoryCocktailRepository : CocktailRepository {
                 "Garnish with a pineapple slice."
             )
         )
-
     )
 
     override fun getRandom(): Cocktail = cocktails.random()

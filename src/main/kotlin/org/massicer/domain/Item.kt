@@ -6,6 +6,7 @@ typealias EthanolMilliliters = Float // for 100 ml of solution
 typealias InternationaBitternesUnit = UInt
 typealias Food = String
 typealias Instruction = String
+typealias Amount = String
 
 sealed class Item(
     val name: Name,
@@ -64,13 +65,9 @@ sealed class Item(
         }
 
         data class Ingredient(val name: String, val amount: Amount) {
-            data class Amount(val value: Double, val measureUnit: MeasureUnit) {
-
-                init {
-                    check(value > 0.0) { "Value mus be bigger than 0" }
-                }
-
-                enum class MeasureUnit { CL }
+            init {
+                check(name.isNotEmpty() && name.isNotBlank()) { "Name should not be empty or blank" }
+                check(amount.isNotEmpty() && amount.isNotBlank()) { "amount should not be empty or blank" }
             }
         }
 

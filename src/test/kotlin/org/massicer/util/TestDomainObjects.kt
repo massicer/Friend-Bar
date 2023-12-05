@@ -3,8 +3,6 @@ package org.massicer.util
 import org.massicer.domain.Item
 import org.massicer.domain.Item.Cocktail
 import org.massicer.domain.Item.Cocktail.Ingredient
-import org.massicer.domain.Item.Cocktail.Ingredient.Amount
-import org.massicer.domain.Item.Cocktail.Ingredient.Amount.MeasureUnit.CL
 
 object TestDomainObjects {
 
@@ -16,23 +14,23 @@ object TestDomainObjects {
         setOf(
             Ingredient(
                 "Tequila",
-                Amount(5.0, CL)
+                "1 glass"
             ),
             Ingredient(
                 "Triple Sec",
-                Amount(2.0, CL)
+                "1 glass"
             ),
             Ingredient(
                 "Lime Juice",
-                Amount(3.0, CL)
+                "1 glass"
             ),
             Ingredient(
                 "Simple Syrup",
-                Amount(1.0, CL)
+                "1 glass"
             ),
             Ingredient(
                 "Salt",
-                Amount(0.5, CL)
+                "1 glass"
             )
         ),
         listOf(

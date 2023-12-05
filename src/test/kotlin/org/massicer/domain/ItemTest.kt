@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test
 import org.massicer.domain.Item.Beer
 import org.massicer.domain.Item.Cocktail
 import org.massicer.domain.Item.Cocktail.Ingredient
-import org.massicer.domain.Item.Cocktail.Ingredient.Amount
-import org.massicer.domain.Item.Cocktail.Ingredient.Amount.MeasureUnit.CL
 
 class ItemTest {
 
@@ -132,12 +130,12 @@ class ItemTest {
             Cocktail(
                 name = "cocktail name",
                 tagline = "Hello",
-                ingredients = setOf(Ingredient("tabasco", Amount(1.2, CL))),
+                ingredients = setOf(Ingredient("tabasco", "1 glass")),
                 instructions = listOf("Put it in", "take it out")
             ).let {
                 it.name shouldBe "cocktail name"
                 it.tagline shouldBe "Hello"
-                it.ingredients shouldBe setOf(Ingredient("tabasco", Amount(1.2, CL)))
+                it.ingredients shouldBe setOf(Ingredient("tabasco", "1 glass"))
                 it.instructions shouldBe listOf("Put it in", "take it out")
             }
         }
@@ -148,7 +146,7 @@ class ItemTest {
                 Cocktail(
                     name = "",
                     tagline = "Hello",
-                    ingredients = setOf(Ingredient("tabasco", Amount(1.2, CL))),
+                    ingredients = setOf(Ingredient("tabasco", "1 glass")),
                     instructions = listOf("Put it in")
                 )
             }
@@ -160,7 +158,7 @@ class ItemTest {
                 Cocktail(
                     name = " ",
                     tagline = "Hello",
-                    ingredients = setOf(Ingredient("tabasco", Amount(1.2, CL))),
+                    ingredients = setOf(Ingredient("tabasco", "1 glass")),
                     instructions = listOf("Put it in")
                 )
             }
@@ -172,7 +170,7 @@ class ItemTest {
                 Cocktail(
                     name = "my-drink",
                     tagline = "",
-                    ingredients = setOf(Ingredient("tabasco", Amount(1.2, CL))),
+                    ingredients = setOf(Ingredient("tabasco", "1 glass")),
                     instructions = listOf("Put it in")
                 )
             }
@@ -184,7 +182,7 @@ class ItemTest {
                 Cocktail(
                     name = "my-drink",
                     tagline = " ",
-                    ingredients = setOf(Ingredient("tabasco", Amount(1.2, CL))),
+                    ingredients = setOf(Ingredient("tabasco", "1 glass")),
                     instructions = listOf("Put it in")
                 )
             }
@@ -196,7 +194,7 @@ class ItemTest {
                 Cocktail(
                     name = "my-drink",
                     tagline = "drink it",
-                    ingredients = setOf(Ingredient("tabasco", Amount(1.2, CL))),
+                    ingredients = setOf(Ingredient("tabasco", "1 glass")),
                     instructions = List(2) { "Put it in" }
                 )
             }

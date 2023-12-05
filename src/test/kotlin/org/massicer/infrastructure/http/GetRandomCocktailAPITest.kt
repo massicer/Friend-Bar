@@ -35,44 +35,29 @@ class GetRandomCocktailAPITest {
 
         @Language("JSON")
         private val expectedResponse = """
-            {
+        {
               "name": "Margarita",
               "tagline": "Classic and Refreshing",
               "ingredients": [
                 {
                   "name": "Tequila",
-                  "amount": {
-                    "value": 5.0,
-                    "measureUnit": "CL"
-                  }
+                  "amount": "1 glass"
                 },
                 {
                   "name": "Triple Sec",
-                  "amount": {
-                    "value": 2.0,
-                    "measureUnit": "CL"
-                  }
+                  "amount": "1 glass"
                 },
                 {
                   "name": "Lime Juice",
-                  "amount": {
-                    "value": 3.0,
-                    "measureUnit": "CL"
-                  }
+                  "amount": "1 glass"
                 },
                 {
                   "name": "Simple Syrup",
-                  "amount": {
-                    "value": 1.0,
-                    "measureUnit": "CL"
-                  }
+                  "amount": "1 glass"
                 },
                 {
                   "name": "Salt",
-                  "amount": {
-                    "value": 0.5,
-                    "measureUnit": "CL"
-                  }
+                  "amount": "1 glass"
                 }
               ],
               "instructions": [
@@ -81,8 +66,6 @@ class GetRandomCocktailAPITest {
                 "The salt present is only for decoration."
               ]
             }
-
-        
     """.toJsonNode()
     }
 }
