@@ -31,7 +31,7 @@ sealed class Item(
         init {
             check(abv >= 0.0f) { "ABV must be bigger or equal to 0" }
             check(abv <= 100.0f) { "ABV must be smaller or equal to 100.0" }
-            check(ibu <= 120u) { "IBU must be bigger or equal to 120" }
+            check(ibu <= 120u) { "IBU must be smaller or equal to 120" }
         }
 
         override fun equals(other: Any?): Boolean {
