@@ -17,7 +17,11 @@ class GetSuggestionUseCase(
     fun get(): Pair<Item?, User> {
         val user = userRepository.getRandom()
         val item =
-            if (user.isDaytime()) beerRepository.getRandom() else cocktailRepository.getCoktailFor(user.firstName)
+            if (user.isDaytime()) {
+                beerRepository.getRandom()
+            } else {
+                cocktailRepository.getFor(user.firstName)
+            }
         return Pair(item, user)
     }
 }

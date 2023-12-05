@@ -70,7 +70,7 @@ class InMemoryCocktailRepository : CocktailRepository {
     )
 
     override fun getRandom(): Cocktail = cocktails.random()
-    override fun getCoktailFor(name: UserName): Cocktail? {
+    override fun getFor(name: UserName): Cocktail? {
         val letter = name.first().lowercase()
         return cocktails.find { it.name.first().lowercase() == letter }
     }

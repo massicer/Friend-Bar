@@ -7,5 +7,5 @@ interface CocktailRepository {
 
     fun getRandom(): Item.Cocktail
 
-    fun getCoktailFor(name: UserName): Item.Cocktail?
+    fun getFor(name: UserName): Item.Cocktail?
 }

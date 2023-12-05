@@ -6,8 +6,8 @@ import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
 import org.intellij.lang.annotations.Language
 import org.junit.jupiter.api.Test
-import org.massicer.domain.Item
 import org.massicer.domain.repositories.BeerRepository
+import org.massicer.util.TestDomainObjects.aBeer
 import org.massicer.util.shouldMatchJson
 import org.massicer.util.toJsonNode
 
@@ -32,7 +32,6 @@ class GetRandomBeerAPITest {
     }
 
     private companion object {
-        private val aBeer = Item.Beer("Lager", "Crisp and Clean", 4.5f, 20u, "Grilled Chicken")
 
         @Language("JSON")
         private val expectedResponse = """
