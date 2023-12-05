@@ -1,12 +1,10 @@
 package org.massicer.infrastructure.repositories
 
-import jakarta.enterprise.context.ApplicationScoped
 import org.massicer.domain.Item.Cocktail
 import org.massicer.domain.Item.Cocktail.Ingredient
 import org.massicer.domain.UserName
 import org.massicer.domain.repositories.CocktailRepository
 
-@ApplicationScoped
 class InMemoryCocktailRepository : CocktailRepository {
 
     @Suppress("MagicNumber")
