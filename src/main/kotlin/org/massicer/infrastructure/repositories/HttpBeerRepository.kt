@@ -11,9 +11,7 @@ import org.massicer.domain.repositories.BeerRepository
 
 @ApplicationScoped
 class HttpBeerRepository(@RestClient private val httpClient: BeerClient) : BeerRepository {
-    override fun getRandom(): Beer {
-        return httpClient.get().first().toBeer()
-    }
+    override fun getRandom(): Beer = httpClient.get().first().toBeer()
 
     @RegisterRestClient(configKey = "beers-api")
     interface BeerClient {
@@ -29,9 +27,7 @@ class HttpBeerRepository(@RestClient private val httpClient: BeerClient) : BeerR
             val ibu: Int,
             @JsonProperty("food_pairing")
             val foodPairing: List<String>
-        ) {
-            constructor() : this("", "", 0, 0, emptyList())
-        }
+        )
     }
 }
 
